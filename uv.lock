@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version >= '3.14'",
@@ -1250,95 +1250,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/39/d7/13c537014f637288297ee9af5684b18b3823acb89e1f588b469196eba83c/kfp_server_api-2.16.0.tar.gz", hash = "sha256:32243e9eed9a386110e0363cbdc88b026f177bd5a1a53b63684bc0a47eb665a3", size = 63821, upload-time = "2026-02-25T14:29:56.678Z" }
 
 [[package]]
-name = "kubeflow-kale"
-source = { editable = "." }
-dependencies = [
-    { name = "astor" },
-    { name = "autopep8" },
-    { name = "dill" },
-    { name = "ipykernel" },
-    { name = "ipython" },
-    { name = "jinja2" },
-    { name = "jupyter-client" },
-    { name = "jupyter-core" },
-    { name = "kfp", extra = ["kubernetes"] },
-    { name = "kubernetes" },
-    { name = "nbconvert" },
-    { name = "nbformat" },
-    { name = "networkx" },
-    { name = "notebook" },
-    { name = "packaging" },
-    { name = "progress" },
-    { name = "pyflakes" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "coverage" },
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "pytest-clarity" },
-    { name = "pytest-cov" },
-    { name = "pytest-jupyter", extra = ["server"] },
-    { name = "ruff" },
-    { name = "testfixtures" },
-]
-docs = [
-    { name = "furo" },
-    { name = "linkify-it-py" },
-    { name = "myst-parser" },
-    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "sphinx-autodoc-typehints", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "sphinx-autodoc-typehints", version = "3.10.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "sphinx-copybutton" },
-    { name = "sphinx-design" },
-]
-jupyter = [
-    { name = "jupyter-server" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "astor", specifier = ">=0.8.1" },
-    { name = "autopep8", specifier = ">=2.0.0" },
-    { name = "coverage", marker = "extra == 'dev'" },
-    { name = "dill", specifier = ">=0.3.8" },
-    { name = "furo", marker = "extra == 'docs'", specifier = ">=2025.0" },
-    { name = "ipykernel", specifier = ">=6.29.5" },
-    { name = "ipython", specifier = ">=8.30.0" },
-    { name = "jinja2", specifier = ">=3.0.0" },
-    { name = "jupyter-client", specifier = ">=8.6.3" },
-    { name = "jupyter-core", specifier = ">=5.8.1" },
-    { name = "jupyter-server", marker = "extra == 'jupyter'", specifier = ">=2.4.0,<3" },
-    { name = "kfp", extras = ["kubernetes"], specifier = ">=2.16.0" },
-    { name = "kubernetes", specifier = ">=30.0.0" },
-    { name = "linkify-it-py", marker = "extra == 'docs'", specifier = ">=2.0" },
-    { name = "myst-parser", marker = "extra == 'docs'", specifier = ">=3.0" },
-    { name = "nbconvert", specifier = ">=7.16.0" },
-    { name = "nbformat", specifier = ">=5.10.4" },
-    { name = "networkx", specifier = ">=3.0.0" },
-    { name = "notebook", specifier = ">=7.4.4" },
-    { name = "packaging", specifier = ">=25.0" },
-    { name = "pre-commit", marker = "extra == 'dev'" },
-    { name = "progress", specifier = ">=1.5" },
-    { name = "pyflakes", specifier = ">=3.0.0" },
-    { name = "pytest", marker = "extra == 'dev'" },
-    { name = "pytest-asyncio", marker = "extra == 'dev'" },
-    { name = "pytest-clarity", marker = "extra == 'dev'" },
-    { name = "pytest-cov", marker = "extra == 'dev'" },
-    { name = "pytest-jupyter", extras = ["server"], marker = "extra == 'dev'", specifier = ">=0.6.0" },
-    { name = "ruff", marker = "extra == 'dev'" },
-    { name = "sphinx", marker = "extra == 'docs'", specifier = ">=9.0" },
-    { name = "sphinx-autodoc-typehints", marker = "extra == 'docs'", specifier = ">=2.0" },
-    { name = "sphinx-copybutton", marker = "extra == 'docs'", specifier = ">=0.5" },
-    { name = "sphinx-design", marker = "extra == 'docs'", specifier = ">=0.6" },
-    { name = "testfixtures", marker = "extra == 'dev'" },
-]
-provides-extras = ["dev", "docs", "jupyter"]
-
-[[package]]
 name = "kubernetes"
 version = "30.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1644,6 +1555,95 @@ sdist = { url = "https://files.pythonhosted.org/packages/0b/5f/19930f824ffeb0ad4
 wheels = [
     { url = "https://files.pythonhosted.org/packages/be/9c/92789c596b8df838baa98fa71844d84283302f7604ed565dafe5a6b5041a/oauthlib-3.3.1-py3-none-any.whl", hash = "sha256:88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1", size = 160065, upload-time = "2025-06-19T22:48:06.508Z" },
 ]
+
+[[package]]
+name = "odh-kale"
+source = { editable = "." }
+dependencies = [
+    { name = "astor" },
+    { name = "autopep8" },
+    { name = "dill" },
+    { name = "ipykernel" },
+    { name = "ipython" },
+    { name = "jinja2" },
+    { name = "jupyter-client" },
+    { name = "jupyter-core" },
+    { name = "kfp", extra = ["kubernetes"] },
+    { name = "kubernetes" },
+    { name = "nbconvert" },
+    { name = "nbformat" },
+    { name = "networkx" },
+    { name = "notebook" },
+    { name = "packaging" },
+    { name = "progress" },
+    { name = "pyflakes" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "coverage" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "pytest-clarity" },
+    { name = "pytest-cov" },
+    { name = "pytest-jupyter", extra = ["server"] },
+    { name = "ruff" },
+    { name = "testfixtures" },
+]
+docs = [
+    { name = "furo" },
+    { name = "linkify-it-py" },
+    { name = "myst-parser" },
+    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "sphinx-autodoc-typehints", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "sphinx-autodoc-typehints", version = "3.10.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+]
+jupyter = [
+    { name = "jupyter-server" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "astor", specifier = ">=0.8.1" },
+    { name = "autopep8", specifier = ">=2.0.0" },
+    { name = "coverage", marker = "extra == 'dev'" },
+    { name = "dill", specifier = ">=0.3.8" },
+    { name = "furo", marker = "extra == 'docs'", specifier = ">=2025.0" },
+    { name = "ipykernel", specifier = ">=6.29.5" },
+    { name = "ipython", specifier = ">=8.30.0" },
+    { name = "jinja2", specifier = ">=3.0.0" },
+    { name = "jupyter-client", specifier = ">=8.6.3" },
+    { name = "jupyter-core", specifier = ">=5.8.1" },
+    { name = "jupyter-server", marker = "extra == 'jupyter'", specifier = ">=2.4.0,<3" },
+    { name = "kfp", extras = ["kubernetes"], specifier = ">=2.16.0" },
+    { name = "kubernetes", specifier = ">=30.0.0" },
+    { name = "linkify-it-py", marker = "extra == 'docs'", specifier = ">=2.0" },
+    { name = "myst-parser", marker = "extra == 'docs'", specifier = ">=3.0" },
+    { name = "nbconvert", specifier = ">=7.16.0" },
+    { name = "nbformat", specifier = ">=5.10.4" },
+    { name = "networkx", specifier = ">=3.0.0" },
+    { name = "notebook", specifier = ">=7.4.4" },
+    { name = "packaging", specifier = ">=25.0" },
+    { name = "pre-commit", marker = "extra == 'dev'" },
+    { name = "progress", specifier = ">=1.5" },
+    { name = "pyflakes", specifier = ">=3.0.0" },
+    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pytest-asyncio", marker = "extra == 'dev'" },
+    { name = "pytest-clarity", marker = "extra == 'dev'" },
+    { name = "pytest-cov", marker = "extra == 'dev'" },
+    { name = "pytest-jupyter", extras = ["server"], marker = "extra == 'dev'", specifier = ">=0.6.0" },
+    { name = "ruff", marker = "extra == 'dev'" },
+    { name = "sphinx", marker = "extra == 'docs'", specifier = ">=9.0" },
+    { name = "sphinx-autodoc-typehints", marker = "extra == 'docs'", specifier = ">=2.0" },
+    { name = "sphinx-copybutton", marker = "extra == 'docs'", specifier = ">=0.5" },
+    { name = "sphinx-design", marker = "extra == 'docs'", specifier = ">=0.6" },
+    { name = "testfixtures", marker = "extra == 'dev'" },
+]
+provides-extras = ["dev", "docs", "jupyter"]
 
 [[package]]
 name = "overrides"
@@ -2445,23 +2445,23 @@ resolution-markers = [
     "python_full_version < '3.12'",
 ]
 dependencies = [
-    { name = "alabaster" },
-    { name = "babel" },
-    { name = "colorama", marker = "sys_platform == 'win32'" },
-    { name = "docutils" },
-    { name = "imagesize" },
-    { name = "jinja2" },
-    { name = "packaging" },
-    { name = "pygments" },
-    { name = "requests" },
-    { name = "roman-numerals" },
-    { name = "snowballstemmer" },
-    { name = "sphinxcontrib-applehelp" },
-    { name = "sphinxcontrib-devhelp" },
-    { name = "sphinxcontrib-htmlhelp" },
-    { name = "sphinxcontrib-jsmath" },
-    { name = "sphinxcontrib-qthelp" },
-    { name = "sphinxcontrib-serializinghtml" },
+    { name = "alabaster", marker = "python_full_version < '3.12'" },
+    { name = "babel", marker = "python_full_version < '3.12'" },
+    { name = "colorama", marker = "python_full_version < '3.12' and sys_platform == 'win32'" },
+    { name = "docutils", marker = "python_full_version < '3.12'" },
+    { name = "imagesize", marker = "python_full_version < '3.12'" },
+    { name = "jinja2", marker = "python_full_version < '3.12'" },
+    { name = "packaging", marker = "python_full_version < '3.12'" },
+    { name = "pygments", marker = "python_full_version < '3.12'" },
+    { name = "requests", marker = "python_full_version < '3.12'" },
+    { name = "roman-numerals", marker = "python_full_version < '3.12'" },
+    { name = "snowballstemmer", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-applehelp", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-devhelp", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-htmlhelp", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-jsmath", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-qthelp", marker = "python_full_version < '3.12'" },
+    { name = "sphinxcontrib-serializinghtml", marker = "python_full_version < '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/50/a8c6ccc36d5eacdfd7913ddccd15a9cee03ecafc5ee2bc40e1f168d85022/sphinx-9.0.4.tar.gz", hash = "sha256:594ef59d042972abbc581d8baa577404abe4e6c3b04ef61bd7fc2acbd51f3fa3", size = 8710502, upload-time = "2025-12-04T07:45:27.343Z" }
 wheels = [
@@ -2478,23 +2478,23 @@ resolution-markers = [
     "python_full_version == '3.12.*'",
 ]
 dependencies = [
-    { name = "alabaster" },
-    { name = "babel" },
-    { name = "colorama", marker = "sys_platform == 'win32'" },
-    { name = "docutils" },
-    { name = "imagesize" },
-    { name = "jinja2" },
-    { name = "packaging" },
-    { name = "pygments" },
-    { name = "requests" },
-    { name = "roman-numerals" },
-    { name = "snowballstemmer" },
-    { name = "sphinxcontrib-applehelp" },
-    { name = "sphinxcontrib-devhelp" },
-    { name = "sphinxcontrib-htmlhelp" },
-    { name = "sphinxcontrib-jsmath" },
-    { name = "sphinxcontrib-qthelp" },
-    { name = "sphinxcontrib-serializinghtml" },
+    { name = "alabaster", marker = "python_full_version >= '3.12'" },
+    { name = "babel", marker = "python_full_version >= '3.12'" },
+    { name = "colorama", marker = "python_full_version >= '3.12' and sys_platform == 'win32'" },
+    { name = "docutils", marker = "python_full_version >= '3.12'" },
+    { name = "imagesize", marker = "python_full_version >= '3.12'" },
+    { name = "jinja2", marker = "python_full_version >= '3.12'" },
+    { name = "packaging", marker = "python_full_version >= '3.12'" },
+    { name = "pygments", marker = "python_full_version >= '3.12'" },
+    { name = "requests", marker = "python_full_version >= '3.12'" },
+    { name = "roman-numerals", marker = "python_full_version >= '3.12'" },
+    { name = "snowballstemmer", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-applehelp", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-devhelp", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-htmlhelp", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-jsmath", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-qthelp", marker = "python_full_version >= '3.12'" },
+    { name = "sphinxcontrib-serializinghtml", marker = "python_full_version >= '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cd/bd/f08eb0f4eed5c83f1ba2a3bd18f7745a2b1525fad70660a1c00224ec468a/sphinx-9.1.0.tar.gz", hash = "sha256:7741722357dd75f8190766926071fed3bdc211c74dd2d7d4df5404da95930ddb", size = 8718324, upload-time = "2025-12-31T15:09:27.646Z" }
 wheels = [
@@ -2509,7 +2509,7 @@ resolution-markers = [
     "python_full_version < '3.12'",
 ]
 dependencies = [
-    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" } },
+    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/1d/f6/bdd93582b2aaad2cfe9eb5695a44883c8bc44572dd3c351a947acbb13789/sphinx_autodoc_typehints-3.6.1.tar.gz", hash = "sha256:fa0b686ae1b85965116c88260e5e4b82faec3687c2e94d6a10f9b36c3743e2fe", size = 37563, upload-time = "2026-01-02T15:23:46.543Z" }
 wheels = [
@@ -2526,7 +2526,7 @@ resolution-markers = [
     "python_full_version == '3.12.*'",
 ]
 dependencies = [
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" } },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/58/2f/6152d2e409ffaab18b397ac1cde0920dc071f9afb76125a2d496c80b9976/sphinx_autodoc_typehints-3.10.0.tar.gz", hash = "sha256:7b821a123852176b2ed4f2cb9da8db06531a15b8098a4c7350c68febb7669bd0", size = 72801, upload-time = "2026-04-09T18:05:16.389Z" }
 wheels = [

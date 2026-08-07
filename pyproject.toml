@@ -3,7 +3,7 @@ requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-jupyter-builder>=
 build-backend = "hatchling.build"
 
 [project]
-name = "kubeflow-kale"
+name = "odh-kale"
 dynamic = ["version"]
 description = "Convert JupyterNotebooks to Kubeflow Pipelines deployments"
 readme = "README.md"
