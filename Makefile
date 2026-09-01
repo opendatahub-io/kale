@@ -120,15 +120,15 @@ KFP_HOST_ADDR ?= host.docker.internal
 
 kfp-build: ## Build wheel for KFP cluster testing (fixed version for reproducibility)
 	@printf "$(BLUE)Building wheel...\n$(NC)"
-	rm -f dist/kubeflow_kale-*.whl
+	rm -f dist/odh_kale-*.whl
 	$(UV) build
 	@# Create PEP 503 compliant simple index structure
 	rm -rf $(KFP_WHEEL_DIR)
-	mkdir -p $(KFP_WHEEL_DIR)/kubeflow-kale
-	cp dist/kubeflow_kale-*.whl $(KFP_WHEEL_DIR)/kubeflow-kale/
+	mkdir -p $(KFP_WHEEL_DIR)/odh-kale
+	cp dist/odh_kale-*.whl $(KFP_WHEEL_DIR)/odh-kale/
 	@# Generate index files for pip simple API
-	@echo '<!DOCTYPE html><html><body><a href="kubeflow-kale/">kubeflow-kale</a></body></html>' > $(KFP_WHEEL_DIR)/index.html
-	@cd $(KFP_WHEEL_DIR)/kubeflow-kale && for f in *.whl; do echo "<a href=\"$$f\">$$f</a><br>"; done > index.html
+	@echo '<!DOCTYPE html><html><body><a href="odh-kale/">odh-kale</a></body></html>' > $(KFP_WHEEL_DIR)/index.html
+	@cd $(KFP_WHEEL_DIR)/odh-kale && for f in *.whl; do echo "<a href=\"$$f\">$$f</a><br>"; done > index.html
 	@printf "$(GREEN)Wheel ready at $(KFP_WHEEL_DIR)\n$(NC)"
 
 kfp-serve: kfp-build ## Serve wheel via HTTP for Kind/Docker clusters

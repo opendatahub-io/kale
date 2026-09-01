@@ -6,7 +6,7 @@ from kfp.kubernetes import add_pod_annotation, add_pod_label, security_context
 
 @kfp_dsl.component(
     base_image='python:3.12',
-    packages_to_install=['kfp>=2.0.0', 'kubeflow-kale', 'numpy'],
+    packages_to_install=['kfp>=2.0.0', 'numpy', 'odh-kale'],
     pip_index_urls=['https://pypi.org/simple'],
     pip_trusted_hosts=[]
 )
@@ -81,7 +81,7 @@ def create_matrix_step(create_matrix_html_report: Output[HTML], kale_metrics_art
 
 @kfp_dsl.component(
     base_image='python:3.12',
-    packages_to_install=['kfp>=2.0.0', 'kubeflow-kale', 'numpy'],
+    packages_to_install=['kfp>=2.0.0', 'numpy', 'odh-kale'],
     pip_index_urls=['https://pypi.org/simple'],
     pip_trusted_hosts=[]
 )

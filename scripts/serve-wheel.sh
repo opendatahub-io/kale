@@ -25,12 +25,12 @@ uv build
 
 # Create PEP 503 compliant simple index structure
 rm -rf "$WHEEL_DIR"
-mkdir -p "$WHEEL_DIR/kubeflow-kale"
-cp dist/kubeflow_kale-*.whl "$WHEEL_DIR/kubeflow-kale/"
+mkdir -p "$WHEEL_DIR/odh-kale"
+cp dist/odh_kale-*.whl "$WHEEL_DIR/odh-kale/"
 
 # Generate index files for pip simple API
-echo '<!DOCTYPE html><html><body><a href="kubeflow-kale/">kubeflow-kale</a></body></html>' > "$WHEEL_DIR/index.html"
-(cd "$WHEEL_DIR/kubeflow-kale" && for f in *.whl; do echo "<a href=\"$f\">$f</a><br>"; done > index.html)
+echo '<!DOCTYPE html><html><body><a href="odh-kale/">odh-kale</a></body></html>' > "$WHEEL_DIR/index.html"
+(cd "$WHEEL_DIR/odh-kale" && for f in *.whl; do echo "<a href=\"$f\">$f</a><br>"; done > index.html)
 
 echo ""
 echo "Serving wheels on http://0.0.0.0:$PORT"

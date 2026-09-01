@@ -6,8 +6,7 @@ from kfp.kubernetes import add_pod_annotation, add_pod_label, security_context
 
 @kfp_dsl.component(
     base_image='python:3.12',
-    packages_to_install=['kfp>=2.0.0',
-                         'kubeflow-kale', 'numpy', 'scikit-learn'],
+    packages_to_install=['kfp>=2.0.0', 'numpy', 'odh-kale', 'scikit-learn'],
     pip_index_urls=['https://pypi.org/simple'],
     pip_trusted_hosts=[]
 )
@@ -94,8 +93,7 @@ def load_transform_data_step(load_transform_data_html_report: Output[HTML], x_tr
 
 @kfp_dsl.component(
     base_image='python:3.12',
-    packages_to_install=['kfp>=2.0.0',
-                         'kubeflow-kale', 'numpy', 'scikit-learn'],
+    packages_to_install=['kfp>=2.0.0', 'numpy', 'odh-kale', 'scikit-learn'],
     pip_index_urls=['https://pypi.org/simple'],
     pip_trusted_hosts=[]
 )
@@ -182,8 +180,7 @@ def train_model_step(train_model_html_report: Output[HTML], x_trn_input_artifact
 
 @kfp_dsl.component(
     base_image='python:3.12',
-    packages_to_install=['kfp>=2.0.0',
-                         'kubeflow-kale', 'numpy', 'scikit-learn'],
+    packages_to_install=['kfp>=2.0.0', 'numpy', 'odh-kale', 'scikit-learn'],
     pip_index_urls=['https://pypi.org/simple'],
     pip_trusted_hosts=[]
 )
