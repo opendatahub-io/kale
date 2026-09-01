@@ -289,9 +289,9 @@ class Compiler:
 
         # Always include kale and kfp as dependencies
         if KALE_VERSION != "0+unknown":
-            package_names.add(f"kubeflow-kale=={KALE_VERSION}")
+            package_names.add(f"odh-kale=={KALE_VERSION}")
         else:
-            package_names.add("kubeflow-kale")
+            package_names.add("odh-kale")
         package_names.add("kfp>=2.0.0")
 
         # Parse imports using AST and resolve to PyPI package names
