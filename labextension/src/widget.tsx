@@ -58,7 +58,10 @@ const id = 'jupyterlab-kubeflow-kale:deploymentPanel';
 const KALE_SETTINGS_PLUGIN_ID = 'jupyterlab-kubeflow-kale:kale-settings';
 const ENABLE_KALE_BY_DEFAULT_KEY = 'enableKaleByDefault';
 const AUTO_SAVE_ON_COMPILE_OR_RUN_KEY = 'autoSaveOnCompileOrRun';
+const ENABLE_COMPOSABLE_NOTEBOOKS_KEY = 'enableComposableNotebooks';
+const ENABLE_VOLUMES_KEY = 'enableVolumes';
 const DEFAULT_BASE_IMAGE_KEY = 'defaultBaseImage';
+const RUNTIME_IMAGES_KEY = 'runtimeImages';
 const SECURITY_CONTEXT_KEY = 'securityContext';
 
 interface ISecurityContextSettings {
@@ -134,7 +137,10 @@ async function activate(
     const [kaleSettings, setKaleSettings] = React.useState({
       enableKaleByDefault: false,
       autoSaveOnCompileOrRun: false,
+      enableComposableNotebooks: false,
+      enableVolumes: true,
       defaultBaseImage: '',
+      runtimeImages: [] as string[],
       securityContext: {} as ISecurityContextSettings,
       outputPath: '',
     });
@@ -231,10 +237,22 @@ async function activate(
               (loadedSetting.get(AUTO_SAVE_ON_COMPILE_OR_RUN_KEY).composite as
                 | boolean
                 | undefined) ?? false,
+            enableComposableNotebooks:
+              (loadedSetting.get(ENABLE_COMPOSABLE_NOTEBOOKS_KEY).composite as
+                | boolean
+                | undefined) ?? false,
+            enableVolumes:
+              (loadedSetting.get(ENABLE_VOLUMES_KEY).composite as
+                | boolean
+                | undefined) ?? true,
             defaultBaseImage:
               (loadedSetting.get(DEFAULT_BASE_IMAGE_KEY).composite as
                 | string
                 | undefined) ?? '',
+            runtimeImages:
+              (loadedSetting.get(RUNTIME_IMAGES_KEY).composite as
+                | string[]
+                | undefined) ?? [],
             securityContext:
               (loadedSetting.get(SECURITY_CONTEXT_KEY).composite as
                 | ISecurityContextSettings
@@ -277,7 +295,10 @@ async function activate(
         kernel={kernel}
         enableKaleByDefault={kaleSettings.enableKaleByDefault}
         autoSaveOnCompileOrRun={kaleSettings.autoSaveOnCompileOrRun}
+        enableComposableNotebooks={kaleSettings.enableComposableNotebooks}
+        enableVolumes={kaleSettings.enableVolumes}
         defaultBaseImageSetting={kaleSettings.defaultBaseImage}
+        runtimeImages={kaleSettings.runtimeImages}
         envDefaultBaseImage={envOnlyBaseImage}
         securityContext={kaleSettings.securityContext}
         outputPath={kaleSettings.outputPath}

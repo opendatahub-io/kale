@@ -37,6 +37,8 @@ interface IProps {
   notebook: NotebookPanel;
   onMetadataEnable: (isEnabled: boolean) => void;
   resolvedDefaultBaseImage: string;
+  runtimeImages: string[];
+  composableNotebooks: boolean;
   initialChecked?: boolean;
 }
 
@@ -44,6 +46,8 @@ export const InlineCellsMetadata: React.FC<IProps> = ({
   notebook,
   onMetadataEnable,
   resolvedDefaultBaseImage,
+  runtimeImages,
+  composableNotebooks,
   initialChecked,
 }) => {
   const [checked, setChecked] = useState(false);
@@ -123,8 +127,10 @@ export const InlineCellsMetadata: React.FC<IProps> = ({
         stepName: activeEditorData.stepName || '',
         stepDependencies: activeEditorData.stepDependencies || [],
         limits: activeEditorData.limits || {},
+        secrets: activeEditorData.secrets || {},
         baseImage: activeEditorData.baseImage,
         enableCaching: activeEditorData.enableCaching,
+        notebookPath: activeEditorData.notebookPath,
         generateHtmlReport: activeEditorData.generateHtmlReport,
       }
     : {
@@ -132,8 +138,10 @@ export const InlineCellsMetadata: React.FC<IProps> = ({
         stepName: '',
         stepDependencies: [],
         limits: {},
+        secrets: {},
         baseImage: undefined,
         enableCaching: undefined,
+        notebookPath: undefined,
         generateHtmlReport: undefined,
       };
 
@@ -143,10 +151,13 @@ export const InlineCellsMetadata: React.FC<IProps> = ({
       stepName={editorProps.stepName}
       stepDependencies={editorProps.stepDependencies}
       limits={editorProps.limits}
+      secrets={editorProps.secrets}
       baseImage={editorProps.baseImage}
       enableCaching={editorProps.enableCaching}
+      notebookPath={editorProps.notebookPath}
       generateHtmlReport={editorProps.generateHtmlReport}
       resolvedDefaultBaseImage={resolvedDefaultBaseImage}
+      runtimeImages={runtimeImages}
     />,
     document.body,
   );
@@ -170,6 +181,7 @@ export const InlineCellsMetadata: React.FC<IProps> = ({
             activeCellIndex,
             isEditorVisible,
             onEditorVisibilityChange,
+            composableNotebooks,
           }}
         >
           {cellMetadataEditor}
